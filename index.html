@@ -20,13 +20,13 @@
     </script>
 </head>
 
-<body><video autoplay loop>
+<body><video autoplay muted onended="this.muted=false">
     <source src="wallpaper-ps5.mp4" type="video/mp4">
-    Your browser does not support the video element
+   Your browser does not support the video element
 </video>
 
-    
-
+        
+ 
     <svg style="display: none" version="2.0">
         <defs>
             <symbol id="delete-icon" viewBox="0 -960 960 960">
@@ -44,7 +44,7 @@
 
             <div style="padding: 30px;padding-top: 80; display: flex;">
                 <input id="redirector-input" type="text" value="http://"
-                    style="width: 100%; border-radius: 10px; padding: 10px; background-color: #1d262e; color: #fff; border-color: #0a0c0f; font-size: 20px;" />
+                    style="width: 100%; border-radius: 10px; padding: 10px; background-color: #24282b; color: #fff; border-color: #0a0c0f; font-size: 20px;" />
                 <a class="btn icon-btn" style="width: 100px;" tabindex="10" onClick="redirectorGo()">
                     <svg width="32px" height="32px" fill="#ddd">
                         <use href="#forward-arrow-icon" />
