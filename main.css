@@ -10,14 +10,15 @@ body {
 
 video {
     position: fixed;
-    top: 50%;
+    top: 70%; /* Ajusta este valor según tus necesidades */
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta el video para cubrir completamente el contenedor */
+    object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+
 #15171a;
 input:focus {
     outline:none;
