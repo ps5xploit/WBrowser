@@ -136,7 +136,7 @@ function create_redirector_buttons() {
     redirector_pinned.innerHTML = "";
 
     let pinned_text = document.createElement("p");
-    pinned_text.innerHTML = "Pinned";
+    pinned_text.innerHTML = "Favorites";
     pinned_text.style.textAlign = "center";
 
     redirector_pinned.appendChild(pinned_text);
