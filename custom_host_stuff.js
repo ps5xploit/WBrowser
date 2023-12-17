@@ -101,12 +101,14 @@ function redirectorGo() {
 }
 
 const default_pinned_websites = [
-    "https://google.com"
+    "https://google.com",
+    "https://ps5xploit.github.io/",
+    "http://192.168.1.37:8080/",
 ]
 
 const dummy_history = [
     "https://google.com",
-    "https://ps5jb.pages.dev",
+    "https://ps5xploit.github.io/",
     "https://github.com",
     "https://duckduckgo.com",
     "https://youtube.com",
