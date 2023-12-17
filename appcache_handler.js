@@ -43,12 +43,12 @@ function add_cache_event_toasts() {
 
 
     appCache.addEventListener('cached', function (e) {
-        showToast('It has been updated successfully.');
+        showToast('Successfully');
     }, false);
 
 
     appCache.addEventListener('obsolete', function (e) {
-        showToast('Site is obsolete, Clear the cache and restart the page.');
+        showToast('Clear the cache and restart the page.');
     }, false);
 
 
