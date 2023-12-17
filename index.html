@@ -1,0 +1,72 @@
+<html manifest="cache3.appcache3">
+
+<div id="cache-progress">
+    <div id="cache-progress-bar"></div>
+</div>
+
+
+<title>Web browser</title>
+<head>
+<link rel="stylesheet" href="main.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="custom_host_stuff.js"></script>
+    <script defer src="appcache_handler.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            onload_setup();
+        }, false);
+    </script>
+</head>
+
+<body>
+    <svg style="display: none" version="2.0">
+        <defs>
+            <symbol id="delete-icon" viewBox="0 -960 960 960">
+                <path
+                    d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z" />
+            </symbol>
+            <symbol id="forward-arrow-icon" viewBox="0 -960 960 960" >
+                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+            </symbol>
+            
+        </defs>
+    </svg>
+
+    <div id="toast-container"></div>
+
+            <div style="padding: 30px;padding-top: 0; display: flex;">
+                <input id="redirector-input" type="text" value="http://"
+                    style="width: 100%; border-radius: 10px; padding: 10px; background-color: #1d262e; color: #fff; border-color: #0a0c0f; font-size: 20px;" />
+                <a class="btn icon-btn" style="width: 100px;" tabindex="10" onclick="redirectorGo()">
+                    <svg width="32px" height="32px" fill="#ddd">
+                        <use href="#forward-arrow-icon" />
+                    </svg>
+                </a>
+            </div>
+
+            <div style="display: flex; flex-direction: row; max-width: 100%; padding-left: 50px; padding-right: 50px;">
+                <div style="width: 60%; margin-right: 35px; " id="redirector-pinned"></div>
+                <div style="width: 1px; background-color: #557; margin-top: 10px;"></div>
+                <div style="width: 40%; margin-left: 35px; " id="redirector-history"></div>
+            </div>
+        </div>
+    </div>
+          </div>
+           <center style="position: fixed;bottom: 0;width: 17%;margin-bottom: 46px" class="info opacity-transition"
+            id="credits">
+            <h4>
+                <b>Web version 1.01b </b>
+            <center style="position: fixed;bottom: 3;width: 14%;margin-bottom: 20px" class="info opacity-transition"
+            id="credits">
+             <h4>
+            <b>by idlesauce</b>
+             <center style="position: fixed;bottom: 3;width: 185%;margin-bottom: 0px" class="info opacity-transition"
+            id="credits">
+             <h4>
+                 <b>T-[09/12/23]</b>
+    <head>
+<script>
+
+</script>
