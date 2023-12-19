@@ -33,28 +33,28 @@ function add_cache_event_toasts() {
     
 
     if (!navigator.onLine) {
-        showToast('Offline.', 300000); // Duración de 5 minutos
+        showToast('★ Offline.', 300000); // Duración de 5 minutos
     }
 
 
     appCache.addEventListener('downloading', function (e) {
-        showToast('Loading cache, wait...');
+        showToast('★ Loading cache, wait...');
     }, false);
 
 
     appCache.addEventListener('cached', function (e) {
-        showToast('Successfully');
+        showToast('   ★ Successfully ! ㋡');
     }, false);
 
 
     appCache.addEventListener('obsolete', function (e) {
-        showToast('Clear the cache and restart the page.');
+        showToast('Clear cache and restart');
     }, false);
 
 
     appCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            showToast('The site was updated. Refresh to switch to updated version',8000);
+            showToast('Site was updated. Refresh ',8000);
         }
     }, false);
 
