@@ -33,7 +33,7 @@ function add_cache_event_toasts() {
     
 
     if (!navigator.onLine) {
-        showToast('★ Offline.', 300000); // Duración de 5 minutos
+        showToast('★ Offline.', 300000); 
     }
 
 
@@ -43,7 +43,10 @@ function add_cache_event_toasts() {
 
 
     appCache.addEventListener('cached', function (e) {
-        showToast('   ★ Successfully ! ㋡');
+        // Esperar 3 segundos antes de mostrar el mensaje
+        setTimeout(function() {
+            showToast('   ★ Successfully ! ㋡');
+        }, 3000);
     }, false);
 
 
