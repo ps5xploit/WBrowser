@@ -33,7 +33,7 @@ function add_cache_event_toasts() {
     
 
     if (!navigator.onLine) {
-        showToast('★ Offline', 300000); 
+        showToast('   ★ Offline', 300000); 
     }
 
 
