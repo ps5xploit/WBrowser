@@ -80,50 +80,12 @@ a:focus {
     border: none;
 }
 
-.secondary-text {
-    color: #959595;
-    margin: 0;
-    padding: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 13px;
 
-}
-
-
-.payload-name {
-    line-height: 32px;
-    font-weight: bolder;
-}
-
-
-.payload-description {
-    color: #959595;
-    margin: 0;
-    padding: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    line-height: 32px;
-    font-size: 15px;
-}
 
 .btn:hover p.payload-description {
     color: #666;
 }
 
-.payload-author {
-    color: #777;
-    margin: 0;
-    padding: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    line-height: 24px;
-    font-size: 13px;
-    font-weight:normal;
-}
 
 .info a {
     color: #e3e3e3;
