@@ -103,22 +103,15 @@ function redirectorGo() {
 const default_pinned_websites = [
     "https://google.com",
     "https://ps5xploit.github.io/",
-    "http://192.168.1.37:8080/",
+    "https://ps5xploit.github.io/umtx/",
 ]
 
 const dummy_history = [
     "https://google.com",
     "https://ps5xploit.github.io/",
     "https://github.com",
-    "https://duckduckgo.com",
     "https://youtube.com",
-    "https://twitter.com",
-    "https://reddit.com",
-    "https://facebook.com",
-    "https://instagram.com",
-    "https://amazon.com",
-    "https://wikipedia.org",
-    "https://netflix.com"
+
 ]
 
 function create_redirector_buttons() {
