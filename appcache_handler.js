@@ -38,14 +38,14 @@ function add_cache_event_toasts() {
 
 
     appCache.addEventListener('downloading', function (e) {
-        showToast('★ Loading cache, wait...');
+        showToast('★ Downloading cache...');
     }, false);
 
 
     appCache.addEventListener('cached', function (e) {
         // Esperar 2 segundos antes de mostrar el mensaje
         setTimeout(function() {
-            showToast('   ★ Successfully ! ㋡');
+            showToast('★ Successfully ! ㋡');
         }, 2000);
     }, false);
 
