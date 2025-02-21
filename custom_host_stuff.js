@@ -78,7 +78,7 @@ function onload_setup() {
 function redirectorGo() {
     let redirector_input = document.getElementById("redirector-input");
     let redirector_input_value = redirector_input.value;
-    if (redirector_input_value == "" || redirector_input_value == "http://") {
+    if (redirector_input_value == "" || redirector_input_value == "https://") {
         showToast("Enter a valid URL.");
         return;
     }
