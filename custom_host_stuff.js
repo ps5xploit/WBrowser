@@ -103,7 +103,7 @@ function redirectorGo() {
 const default_pinned_websites = [
     "https://google.com",
     "https://ps5xploit.github.io/",
-    "https://ps5xploit.github.io/umtx/",
+    "https://ps5xploit-umtx.pages.dev",
 ]
 
 const dummy_history = [
