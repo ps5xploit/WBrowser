@@ -43,10 +43,10 @@ function add_cache_event_toasts() {
 
 
     appCache.addEventListener('cached', function (e) {
-        // Esperar 3 segundos antes de mostrar el mensaje
+        // Esperar 2 segundos antes de mostrar el mensaje
         setTimeout(function() {
             showToast('   ★ Successfully ! ㋡');
-        }, 3000);
+        }, 2000);
     }, false);
 
 
