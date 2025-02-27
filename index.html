@@ -14,13 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
 
-<script>
+<script> // tooltip muestra title en navegador ps5
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[title]").forEach((element) => {
         let tooltip;
 
         element.addEventListener("mouseenter", function () {
-            // Crear tooltip
+           
             tooltip = document.createElement("div");
             tooltip.textContent = element.getAttribute("title");
             tooltip.style.position = "absolute";
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             tooltip.style.padding = "5px 10px";
             tooltip.style.borderRadius = "5px";
             tooltip.style.fontSize = "15px";
+		tooltip.style.fontFamily = "Arial, sans-serif";
             tooltip.style.whiteSpace = "nowrap";
             tooltip.style.pointerEvents = "none";
             tooltip.style.zIndex = "1000";
