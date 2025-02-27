@@ -14,6 +14,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("[title]").forEach((element) => {
+        let tooltip;
+
+        element.addEventListener("mouseenter", function () {
+            // Crear tooltip
+            tooltip = document.createElement("div");
+            tooltip.textContent = element.getAttribute("title");
+            tooltip.style.position = "absolute";
+            tooltip.style.background = "black";
+            tooltip.style.color = "white";
+            tooltip.style.padding = "5px 10px";
+            tooltip.style.borderRadius = "5px";
+            tooltip.style.fontSize = "12px";
+            tooltip.style.whiteSpace = "nowrap";
+            tooltip.style.pointerEvents = "none";
+            tooltip.style.zIndex = "1000";
+
+            document.body.appendChild(tooltip);
+
+            const rect = element.getBoundingClientRect();
+            tooltip.style.top = rect.top + window.scrollY - tooltip.offsetHeight - 5 + "px";
+            tooltip.style.left = rect.left + window.scrollX + (rect.width / 2) - (tooltip.offsetWidth / 2) + "px";
+        });
+
+        element.addEventListener("mouseleave", function () {
+            if (tooltip) {
+                tooltip.remove();
+            }
+        });
+    });
+});
+</script>
+
+	
     <script defer src="custom_host_stuff.js"></script>
     <script defer src="appcache_handler.js"></script>
     <script>
