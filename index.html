@@ -13,21 +13,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
-<style>
-    .video-container {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: opacity 1s ease-in-out;
-    }
-</style>
+
 <script> // tooltip muestra title en navegador ps5
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[title]").forEach((element) => {
@@ -115,42 +101,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<div class="video-container">
-    <video id="video1" autoplay loop muted>
-        <source src="wallpaper-ps5.mp4" type="video/mp4">
-    </video>
-    <video id="video2" autoplay loop muted style="opacity: 0;">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-</div>
+<video id="background-video" autoplay loop muted>
+    <source id="video-source" src="wallpaper-ps5.mp4" type="video/mp4">
+    Your browser does not support the video element.
+</video>
 
 <script>
-    const videos = ["wallpaper-ps5.mp4", "background.mp4"];
+    const videos = ["wallpaper-ps5.mp4", "background.mp4"]; // Lista de videos
     let index = 0;
-    const video1 = document.getElementById("video1");
-    const video2 = document.getElementById("video2");
+    const videoElement = document.getElementById("background-video");
+    const sourceElement = document.getElementById("video-source");
 
     function changeVideo() {
-        index = (index + 1) % videos.length; // Alternar entre videos
-
-        // Selecciona el video actual y el siguiente
-        let currentVideo = index % 2 === 0 ? video1 : video2;
-        let nextVideo = index % 2 === 0 ? video2 : video1;
-
-        // Cambia la fuente del nuevo video y lo carga antes de mostrarlo
-        nextVideo.children[0].src = videos[index];
-        nextVideo.load();
-        nextVideo.play();
-
-        // Hace el fundido cruzado
-        nextVideo.style.opacity = 1;
-        setTimeout(() => {
-            currentVideo.style.opacity = 0; // Oculta el anterior después de la transición
-        }, 1000); // Duración del fade
+        index = (index + 1) % videos.length; // Alternar entre los dos videos
+        sourceElement.src = videos[index];
+        videoElement.load(); // Recargar el video con la nueva fuente
+        videoElement.play(); // Reproducir el nuevo video
     }
 
-    setInterval(changeVideo, 40000); // Cambia cada 40s
-</script>
+    setInterval(changeVideo, 40000); // Cambia de video cada 40 segundos 
+
 
 
 
