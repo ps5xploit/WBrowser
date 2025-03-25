@@ -119,18 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const sourceElement = document.getElementById("video-source");
 
     function changeVideo() {
-        videoElement.style.opacity = 0; // Desvanece el video
-        setTimeout(() => {
-            index = (index + 1) % videos.length; // Cambia de video
-            sourceElement.src = videos[index];
-            videoElement.load();
-            videoElement.play();
-            videoElement.style.opacity = 1; // Vuelve a aparecer suavemente
-        }, 1000); // Tiempo del desvanecimiento (1s)
+        index = (index + 1) % videos.length; // Alternar entre los dos videos
+        sourceElement.src = videos[index];
+        videoElement.load(); // Recargar el video con la nueva fuente
+        videoElement.play(); // Reproducir el nuevo video
     }
 
     setInterval(changeVideo, 40000); // Cambia de video cada 40 segundos 
 </script>
+
 
   
  
