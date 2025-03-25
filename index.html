@@ -103,13 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
 </video>
 
 <script>
-    const videos = ["wallpaper-ps5.mp4", "background.mp4"]; // Lista de videos
+    const videos = ["wallpaper-ps5.mp4", "background.mp4", "background3.mp4"]; // Lista de videos
     let index = 0;
     const videoElement = document.getElementById("background-video");
     const sourceElement = document.getElementById("video-source");
 
     function changeVideo() {
-        index = (index + 1) % videos.length; // Alternar entre los dos videos
+        index = (index + 1) % videos.length; // Alternar entre los tres videos
         sourceElement.src = videos[index];
         videoElement.load(); // Recargar el video con la nueva fuente
         videoElement.play(); // Reproducir el nuevo video
@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(changeVideo, 40000); // Cambia de video cada 40 segundos
 </script>
+
   
  
     <svg style="display: none" version="2.0">
