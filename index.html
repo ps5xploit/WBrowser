@@ -13,7 +13,15 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
-
+<style>
+    #background-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 1s ease-in-out; /* Transición suave */
+    }
+</style>
 <script> // tooltip muestra title en navegador ps5
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[title]").forEach((element) => {
@@ -97,6 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keyup", manejarKeyUp);
 </script>
 
+
+
 <video id="background-video" autoplay loop muted>
     <source id="video-source" src="wallpaper-ps5.mp4" type="video/mp4">
     Your browser does not support the video element.
@@ -109,14 +119,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const sourceElement = document.getElementById("video-source");
 
     function changeVideo() {
-        index = (index + 1) % videos.length; // Alternar entre los dos videos
-        sourceElement.src = videos[index];
-        videoElement.load(); // Recargar el video con la nueva fuente
-        videoElement.play(); // Reproducir el nuevo video
+        videoElement.style.opacity = 0; // Desvanece el video
+        setTimeout(() => {
+            index = (index + 1) % videos.length; // Cambia de video
+            sourceElement.src = videos[index];
+            videoElement.load();
+            videoElement.play();
+            videoElement.style.opacity = 1; // Vuelve a aparecer suavemente
+        }, 1000); // Tiempo del desvanecimiento (1s)
     }
 
-    setInterval(changeVideo, 60000); // Cambia de video cada 60 segundos (1 minuto)
+    setInterval(changeVideo, 60000); // Cambia de video cada 60 segundos (1 min)
 </script>
+
   
  
     <svg style="display: none" version="2.0">
