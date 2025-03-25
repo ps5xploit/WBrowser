@@ -97,10 +97,26 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keyup", manejarKeyUp);
 </script>
 
-<video autoplay loop>
-    <source src="wallpaper-ps5.mp4" type="video/mp4">
-  Your browser does not support the video element
+<video id="background-video" autoplay loop muted>
+    <source id="video-source" src="wallpaper-ps5.mp4" type="video/mp4">
+    Your browser does not support the video element.
 </video>
+
+<script>
+    const videos = ["wallpaper-ps5.mp4", "background.mp4"]; // Lista de videos
+    let index = 0;
+    const videoElement = document.getElementById("background-video");
+    const sourceElement = document.getElementById("video-source");
+
+    function changeVideo() {
+        index = (index + 1) % videos.length; // Alternar entre los dos videos
+        sourceElement.src = videos[index];
+        videoElement.load(); // Recargar el video con la nueva fuente
+        videoElement.play(); // Reproducir el nuevo video
+    }
+
+    setInterval(changeVideo, 60000); // Cambia de video cada 60 segundos (1 minuto)
+</script>
   
  
     <svg style="display: none" version="2.0">
