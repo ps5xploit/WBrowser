@@ -100,8 +100,8 @@ function redirectorGo() {
     window.location = redirector_input_value;
 }
 
-const default_pinned_websites = [    "https://ps5xploit.github.io",
-    "https://ps5xploit-umtx.pages.dev",
+const default_pinned_websites = [    "https://ps5xploit.github.io/umtx/",
+    
 ]
 
 const dummy_history = [
