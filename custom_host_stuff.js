@@ -3,11 +3,11 @@ function onload_setup() {
         add_cache_event_toasts();
     }
 
-    //  Forzar favoritos si están mal formados o incompletos
+    //  Cargar favoritos solo si están vacíos o mal formateados
     try {
         let raw = localStorage.getItem("redirector_pinned");
         let parsed = JSON.parse(raw);
-        if (!Array.isArray(parsed) || parsed.length !== 3 || !parsed[0].url) {
+        if (!Array.isArray(parsed) || parsed.length === 0 || !parsed[0].url) {
             throw new Error("formato incorrecto");
         }
     } catch (e) {
@@ -250,6 +250,7 @@ function showToast(message) {
         });
     }, 2000);
 }
+
 
 
 
