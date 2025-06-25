@@ -3,7 +3,7 @@ function onload_setup() {
         add_cache_event_toasts();
     }
 
-    // 🔁 Revisión y corrección de favoritos antiguos o malformados
+    //  Forzar favoritos si están mal formados o incompletos
     try {
         let raw = localStorage.getItem("redirector_pinned");
         let parsed = JSON.parse(raw);
@@ -96,8 +96,8 @@ function redirectorGo() {
 
 const default_pinned_websites = [
     { url: "https://ps5xploit.github.io/umtx/", label: "1.xx - 5.xx" },
-    { url: "https://ps5xploit.github.io/lite/", label: "1.xx - 4.xx" },
-    { url: "https://ps5shopappkg.pages.dev", label: "ShopAppkg" }
+    { url: "https://ps5xploit.github.io/lite/", label: "3.xx - 4.xx" },
+    { url: "https://ps5shopappkg.pages.dev", label: "Shop Appkg" }
 ];
 
 function create_redirector_buttons() {
@@ -130,7 +130,7 @@ function create_redirector_buttons() {
         let a1 = document.createElement("a");
         a1.className = "btn small-btn";
         a1.tabIndex = "0";
-        a1.innerHTML = redirector_pinned_store[i].label;
+        a1.innerHTML = `${redirector_pinned_store[i].url} <span style="color: #aaa; margin-left: 6px;">(${redirector_pinned_store[i].label})</span>`;
         a1.title = redirector_pinned_store[i].url;
         a1.onclick = () => {
             window.location = redirector_pinned_store[i].url;
@@ -250,5 +250,6 @@ function showToast(message) {
         });
     }, 2000);
 }
+
 
 
