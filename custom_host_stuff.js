@@ -1,7 +1,4 @@
-
-
 function onload_setup() {
-
     if (document.documentElement.hasAttribute("manifest")) {
         add_cache_event_toasts();
     }
@@ -44,10 +41,8 @@ function onload_setup() {
                         isTransitionInProgress = false;
                     }, 420);
                 }, 10);
-
             } else {
                 center_view.style.left = "30%";
-
                 setTimeout(() => {
                     center_view.style.transition = "left 0.4s ease, opacity 0.25s ease";
 
@@ -106,7 +101,12 @@ function create_redirector_buttons() {
         redirector_pinned_store_raw = localStorage.getItem("redirector_pinned");
     }
 
-    let redirector_pinned_store = JSON.parse(redirector_pinned_store_raw);
+    let redirector_pinned_store = JSON.parse(redirector_pinned_store_raw).map(entry => {
+        if (typeof entry === "string") {
+            return { url: entry, label: entry };
+        }
+        return entry;
+    });
 
     const redirector_pinned = document.getElementById("redirector-pinned");
     redirector_pinned.innerHTML = "";
@@ -243,4 +243,5 @@ function showToast(message) {
         });
     }, 2000);
 }
+
 
