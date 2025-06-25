@@ -3,6 +3,17 @@ function onload_setup() {
         add_cache_event_toasts();
     }
 
+    // 🔁 Revisión y corrección de favoritos antiguos o malformados
+    try {
+        let raw = localStorage.getItem("redirector_pinned");
+        let parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed) || parsed.length !== 3 || !parsed[0].url) {
+            throw new Error("formato incorrecto");
+        }
+    } catch (e) {
+        localStorage.setItem("redirector_pinned", JSON.stringify(default_pinned_websites));
+    }
+
     create_redirector_buttons();
 
     document.documentElement.style.overflowX = 'hidden';
@@ -27,12 +38,10 @@ function onload_setup() {
                 redirector.style.left = "-30%";
                 setTimeout(() => {
                     redirector.style.transition = "left 0.4s ease, opacity 0.25s ease";
-
                     center_view.style.pointerEvents = "none";
                     center_view.style.opacity = "0";
                     redirector.style.pointerEvents = "auto";
                     redirector.style.opacity = "1";
-
                     redirector.style.left = "0";
                     center_view.style.left = "30%";
                     setTimeout(() => {
@@ -45,12 +54,10 @@ function onload_setup() {
                 center_view.style.left = "30%";
                 setTimeout(() => {
                     center_view.style.transition = "left 0.4s ease, opacity 0.25s ease";
-
                     center_view.style.pointerEvents = "auto";
                     center_view.style.opacity = "1";
                     redirector.style.pointerEvents = "none";
                     redirector.style.opacity = "0";
-
                     redirector.style.left = "-30%";
                     center_view.style.left = "0";
                     setTimeout(() => {
