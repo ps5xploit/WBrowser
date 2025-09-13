@@ -97,7 +97,7 @@ function redirectorGo() {
 const default_pinned_websites = [
     { url: "https://ps5xploit.github.io/umtx/", label: "1.xx - 5.xx" },
     { url: "https://ps5xploit.github.io/lite/", label: "3.xx - 4.xx" },
-    { url: "http://ps5shopappkg.infy.uk/", label: "Shop Appkg" }
+    { url: "http://ps5shopappkg.pages.dev/", label: "Shop Appkg" }
 ];
 
 function create_redirector_buttons() {
