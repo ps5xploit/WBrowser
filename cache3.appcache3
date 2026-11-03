@@ -1,5 +1,6 @@
 CACHE MANIFEST 
 # add pinned site relapse 04/10/26 00:09 #
+# add browser fullscreen 03/11/26 test9 #
 background3.mp4
 background.mp4
 wallpaper-ps5.mp4
@@ -9,6 +10,12 @@ cache3.appcache3
 custom_host_stuff.js
 index.html
 main.css
+fullscreen.js
+fullscreen/web-browser-fullscreen.elf
+fullscreen/web-browser-restore.elf
+
+NETWORK:
+*
 
 
 
